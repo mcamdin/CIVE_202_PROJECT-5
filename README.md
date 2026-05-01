@@ -71,5 +71,5 @@ This project shows how coding can be used in civil engineering to automate repet
 ---
 
 ## Author  
-Camdin Wagner McGuigan  
+Camdin Wagner McGuigan and Ahmad Rezaie
 CIVE 202 – Civil Engineering
