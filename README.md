@@ -1,75 +1,131 @@
-# Steel Beam Analysis Code (Project #5 – CIVE 202)
+# Project 5 – Automated Design and Evaluation of W-Shaped Steel Tension Members
 
-## Overview  
-This project focuses on creating a Python-based tool to analyze steel beams and check whether they meet basic design requirements. The goal was to take concepts from class (like loads, reactions, and moments) and turn them into code that can automatically evaluate a beam.
+## Overview
 
-Instead of solving everything by hand, this code lets the user input values (like loads and beam properties) and get results quickly. It’s meant to show how coding can be used in civil engineering to make calculations more efficient and consistent.
+This project was completed for CIVE 202 and focuses on automating the design check process for W-shaped steel tension members using Python. The notebook loads cleaned W-beam data, calculates allowable strengths using safety factors, and determines if selected steel members can safely resist applied tension loads.
 
----
-
-## What the Code Does  
-- Takes user inputs for beam properties (length, loads, etc.)  
-- Calculates reaction forces at supports  
-- Determines shear forces and bending moments  
-- Checks if the beam is acceptable based on given conditions  
-- Outputs results in a way that’s easy to understand  
+The goal of this project was to create a simple engineering tool that can quickly evaluate different W-shape beams without needing to complete repetitive hand calculations every time.
 
 ---
 
-## Files Included  
-- `Project#5.ipynb` → Main Jupyter Notebook with all code and explanations  
-- `README.md` → This file explaining the project  
+## Project Objectives
+
+* Import and clean W-shape beam data from a CSV file
+* Calculate allowable yield strength
+* Calculate allowable fracture strength
+* Determine the governing strength of each beam
+* Allow user input for custom beam checks
+* Test multiple design scenarios
+* Create graphs to compare loads and strengths
+* Organize the code in a clean and readable notebook format
 
 ---
 
-## How to Run the Code  
-1. Open the notebook in Jupyter Notebook or JupyterLab  
-2. Run each cell from top to bottom  
-3. Enter the required inputs when prompted  
-4. View the outputs and results printed below each section  
+## Packages Used
+
+The following Python packages were used in this project:
+
+* pandas
+* numpy
+* plotly
+
+These packages were used for data handling, calculations, and graph visualization.
 
 ---
 
-## Code Structure  
-The notebook is organized into sections:
+## Engineering Concepts Used
 
-- **Input Section** → defines beam length, loads, and other properties  
-- **Calculation Section** → functions that compute reactions, shear, and moments  
-- **Evaluation Section** → checks whether the beam meets requirements  
-- **Output Section** → prints results clearly  
+This project uses basic steel tension member design concepts commonly used in civil and structural engineering.
 
-Each part is commented so it’s easy to follow what the code is doing.
+The program calculates:
 
----
+* Allowable Yield Strength
+* Allowable Fracture Strength
+* Governing Strength
 
-## Key Concepts Used  
-- Static equilibrium (ΣF = 0, ΣM = 0)  
-- Shear force and bending moment relationships  
-- Basic structural behavior of beams  
-- Python functions and conditional logic  
+Safety factors were included in the calculations to create more realistic design results.
 
----
+### Safety Factors Used
 
-## Assumptions  
-- Beam is analyzed under simplified loading conditions  
-- Loads follow standard statics assumptions  
-- A safety factor is included since one was not explicitly provided  
+* Yield Safety Factor = 1.67
+* Fracture Safety Factor = 2.00
 
 ---
 
-## Why This Project Matters  
-This project shows how coding can be used in civil engineering to automate repetitive calculations and reduce human error. It connects concepts from statics to real-world structural analysis.
+## Notebook Sections
+
+The notebook is organized into several sections:
+
+1. Import Packages
+2. Load and Check Beam Data
+3. Set Safety Factors
+4. Calculate Yield and Fracture Strengths
+5. Determine Governing Strength
+6. Create Beam Check Function
+7. User Input Design Check
+8. Client Design Scenarios
+9. Results Tables
+10. Graphs and Visualization
 
 ---
 
-## Possible Improvements  
-- Add more complex loading cases  
-- Include different beam types (cantilever, continuous, etc.)  
-- Generate shear and moment diagrams  
-- Turn into a simple user interface or web tool  
+## User Input Function
+
+The notebook includes a function where the user can enter:
+
+* W-shape beam
+* Yield strength (Fy)
+* Fracture strength (Fu)
+* Applied tension load
+
+The program then determines if the selected beam is acceptable based on the governing allowable strength.
+
+Example:
+
+```python
+shape = "W24x55"
+Fy = 50
+Fu = 65
+load = 500
+```
 
 ---
 
-## Author  
+## Graphs Included
+
+Two graphs were created using Plotly:
+
+1. Applied Load vs Governing Strength
+2. Yield Strength vs Fracture Strength
+
+These graphs help visualize how the applied loads compare to the allowable member strengths.
+
+---
+
+## Files Included
+
+* `Project#5.ipynb` → Main Python notebook
+* `Project5_W_Beams.csv` → Cleaned W-shape beam dataset
+* `README.md` → Project explanation and overview
+
+---
+
+## Results
+
+The project successfully:
+
+* Loaded and analyzed over 200 W-shape beams
+* Calculated allowable strengths automatically
+* Checked multiple beam scenarios
+* Compared design loads against governing strengths
+* Generated engineering graphs for visualization
+
+The notebook can be expanded in the future to include compression members, bending checks, or additional structural calculations.
+
+---
+
+## Author
+
 Camdin Wagner McGuigan and Ahmad Rezaie
-CIVE 202 – Civil Engineering
+CIVE 202 – Civil Engineering Coding Project
+University of Nebraska
